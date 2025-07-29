@@ -1,4 +1,5 @@
 ---
+type: work
 title: "Staff Technical Writer (Future Role)"
 company: "Your Next Org"
 period: "Coming Soon"  # 👈 Required for homepage filter
@@ -9,6 +10,7 @@ highlights:
   - Mentor writers and engineer better ways of writing and collaborating across functions.
 sort: 0
 tags: [aspiration, leadership, developer-experience]
+layout: work.njk
 ---
 
 In my next role, I aim to lead or contribute to a documentation and developer experience team where clarity, reuse, and human-first systems take center stage.

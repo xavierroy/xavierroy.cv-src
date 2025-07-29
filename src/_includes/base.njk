@@ -25,7 +25,8 @@
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a href="/" class="nav-brand">Xavier Roy</a>
+      <h1><a href="/" class="nav-brand">Xavier Roy</a></h1>
+       <span class="tagline">I help people understand software better.</span>
       <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
       <ul class="nav-list" id="nav-list">
         <li><a href="/">Résumé</a></li>
@@ -35,10 +36,9 @@
     </nav>
   </header>
 
-        <main>
-            {% block content %}{% endblock content  %}
-
-        </main>
+ <main>
+       {% block content %}{{ content | safe }}{% endblock content %}
+    </main>
 
   <footer class="site-footer">
     <p>

@@ -1,0 +1,5 @@
+<ul>
+{% for highlight_item in role.data.highlights | slice(0, 3) %}
+    <li>{{ highlight_item }}</li> {# This is the original line we want to work #}
+{% endfor %}
+</ul>

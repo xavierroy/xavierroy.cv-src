@@ -1,28 +1,34 @@
----
-layout: layout.njk
-title: Xavier Roy — Résumé
----
-
 <header>
-  <h1>
-    Xavier Roy  
-    <span>I help people understand software better.</span>
-  </h1>
+  <h1>Xavier Roy</h1>
+     <span>I help people understand software better.</span>
+ 
+</header>
+
   <address>
     <a href="https://www.linkedin.com/in/xavierroy/">in/xavierroy</a>  
     <a href="https://github.com/xavierroy">github/xavierroy</a>  
     <a href="mailto:xavier@xavierroy.com">xavier@xavierroy.com</a>
   </address>
-</header>
 
----
+<hr class="divider" />
 
+{# --- START OF SUMMARY SECTION --- #}
+{% set summaryContent %}
 ## Summary
 
 Accomplished information experience leader with two decades of expertise in documentation, developer tooling, and systems thinking. I specialize in making complex ideas accessible — through clear writing, thoughtful systems, and collaborative strategy.
+{% endset %}
+{{ summaryContent | markdown | safe }} {# Apply markdown and safe filters #}
+{# --- END OF SUMMARY SECTION --- #}
 
----
-## Open to Opportunities
+<hr class="divider" />
+
+{# --- START OF EXPERIENCE SECTION --- #}
+{% set experienceContent %}
+## Experience
+{% endset %}
+{{ experienceContent | markdown | safe }} {# Apply markdown and safe filters #}
+{# --- END OF EXPERIENCE SECTION --- #}
 
 {% for role in collections.work %}
   {% if role.data.period == "Coming Soon" %}
@@ -41,42 +47,48 @@ Accomplished information experience leader with two decades of expertise in docu
   {% endif %}
 {% endfor %}
 
----
+<hr class="divider" />
 
-## Experience
 {% for role in collections.work %}
   {% if role.data.period != "Coming Soon" %}
     <article class="work-entry">
       <h3>{{ role.data.title }} at {{ role.data.company }}</h3>
       <p class="meta">{{ role.data.period }} — {{ role.data.location }}</p>
 
-      {% if role.data.highlights %}
-        <ul>
-          {% for item in role.data.highlights | slice(0, 3) %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p>{{ role.data.highlight }}</p>
-      {% endif %}
+      <ul>
+      {% for item in role.data.highlights %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
 
       <p><a href="{{ role.url }}">Read more →</a></p>
     </article>
   {% endif %}
 {% endfor %}
----
 
+
+
+{# --- START OF EDUCATION SECTION --- #}
+{% set educationContent %}
 ## Education
 
 - **Certified Usability Analyst (CUA)** — Human Factors International  
 - **M.S. in Information Technology & Management** — Madurai Kamaraj University  
 - **B.Sc. in Computer Science** — Bharathiar University
+{% endset %}
+{{ educationContent | markdown | safe }} {# Apply markdown and safe filters #}
+{# --- END OF EDUCATION SECTION --- #}
 
----
+<hr class="divider" />
 
+{# --- START OF CONTACT SECTION --- 
+{% set contactContent %}
 ## Contact
 
 - 🌐 [xavierroy.cv](https://xavierroy.cv)  
 - 📧 [xavier@xavierroy.com](mailto:xavier@xavierroy.com)  
 - 💼 [LinkedIn](https://www.linkedin.com/in/xavierroy)  
 - 💻 [GitHub](https://github.com/xavierroy)
+{% endset %}
+{{ contactContent | markdown | safe }} 
+--- END OF CONTACT SECTION --- #}

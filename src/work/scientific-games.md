@@ -1,4 +1,5 @@
 ---
+type: work
 title: "Lead Technical Writer & Technical Editor"
 company: "Scientific Games (now Light & Wonder)"
 period: "2006 – 2017"
@@ -9,6 +10,7 @@ highlights:
   - Managed documentation delivery for lottery and gaming platforms used in 15+ countries.
 sort: 1
 tags: [enterprise, editorial, translation, structured-authoring]
+layout: work.njk
 ---
 
 At Scientific Games, I led documentation strategy for large-scale lottery and gaming platforms used by governments and gaming vendors worldwide.

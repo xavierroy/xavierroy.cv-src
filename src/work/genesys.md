@@ -1,4 +1,5 @@
 ---
+type: work
 title: "Lead Technical Writer"
 company: "Genesys"
 period: "2017 – 2025"
@@ -8,7 +9,8 @@ highlights:
   - Enabled PMs and devs to contribute docs through markdown workflows.
   - Reduced support load by 25% with structured IA and task-based content.
 sort: 2
-tags: [leadership, cloud, content-strategy, developer-docs]
+tags: [leadership, cloud, content-strategy, developer-docs, work]
+layout: work.njk
 ---
 
 
