@@ -7,10 +7,10 @@ highlights:
   - Led documentation architecture for 20+ product streams on the Genesys Cloud CX platform.
   - Enabled PMs and devs to contribute docs through markdown workflows.
   - Reduced support load by 25% with structured IA and task-based content.
-layout: testwork.njk
 sort: 2
 tags: [leadership, cloud, content-strategy, developer-docs]
 ---
+
 
 At Genesys, I led core documentation efforts for the Genesys Cloud platform, supporting both end-user and developer-facing content. My focus was on scale, clarity, and aligning documentation strategy with evolving product and platform goals.
 

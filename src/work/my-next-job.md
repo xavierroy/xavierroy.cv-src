@@ -7,7 +7,6 @@ highlights:
   - Build or lead a docs platform that enables devs to self-serve and scale knowledge.
   - Advocate for modular content and systems that grow with product velocity.
   - Mentor writers and engineer better ways of writing and collaborating across functions.
-layout: testwork.njk
 sort: 0
 tags: [aspiration, leadership, developer-experience]
 ---

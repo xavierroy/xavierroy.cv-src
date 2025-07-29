@@ -1,0 +1,17 @@
+{% block content %}
+<article>
+  <h1>{{ title }}</h1>
+  <div>
+    <strong>Company:</strong> {{ company }}<br />
+    <strong>Role:</strong> {{ title }}<br />
+    <strong>Period:</strong> {{ period }}<br />
+    <strong>Location:</strong> {{ location }}
+  </div>
+
+  <section>
+    {{ content | safe }}
+  </section>
+
+  <p><a href="/">← Back to résumé</a></p>
+</article>
+{% endblock %}

@@ -1,21 +1,23 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/styles");
-  eleventyConfig.addPassthroughCopy("src/assets");
+  // Collections
+eleventyConfig.addCollection("work", (collection) =>
+  collection.getFilteredByTag("work").sort((a, b) =>
+    (a.data.sort || 0) - (b.data.sort || 0)
+  )
+);
+  // Passthrough for assets like logos, images, and fonts
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/styles": "styles" });
 
-eleventyConfig.addCollection("work", function (collectionApi) {
-  return collectionApi.getFilteredByGlob("src/work/*.md").sort((a, b) => {
-    return (b.data.sort || 0) - (a.data.sort || 0);
-  });
-});
-
- return {
+  return {
     dir: {
       input: "src",
       includes: "_includes",
       output: "_site"
     },
-    markdownTemplateEngine: "njk",  // This line is crucial
+    markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk"
+    dataTemplateEngine: "njk",
+     templateFormats: ["md", "njk", "html"]
   };
 };

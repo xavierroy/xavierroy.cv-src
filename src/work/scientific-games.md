@@ -7,7 +7,6 @@ highlights:
   - Introduced DITA-based structured authoring and reduced translation overhead by ~30%.
   - Created editorial frameworks and trained writers across India, the US, and Australia.
   - Managed documentation delivery for lottery and gaming platforms used in 15+ countries.
-layout: testwork.njk
 sort: 1
 tags: [enterprise, editorial, translation, structured-authoring]
 ---

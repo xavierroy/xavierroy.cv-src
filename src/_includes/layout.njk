@@ -4,30 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ title }}</title>
+  <title>{{ title or "Xavier Roy · Résumé" }}</title>
+  <meta name="description" content="{{ description or 'Résumé of Xavier Roy — Technical Writer, Systems Thinker, and Documentation Leader.' }}">
 
-  <!-- Favicon and Social -->
+  <!-- Favicon & Social -->
   <link rel="icon" href="/assets/xr-logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/xr-logo.svg">
   <meta property="og:image" content="/assets/xr-resume-og.png">
   <meta property="og:type" content="profile">
   <meta name="twitter:image" content="/assets/xr-resume-og.png">
 
-  <!-- Fonts + Styles -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Teko:wght@500&family=Work+Sans:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/main.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/main.css" media="screen">
+  <link rel="stylesheet" href="/styles/print.css" media="print">
 </head>
 
 <body>
-  <main>
-    {{ content | safe }}
-  </main>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-brand">Xavier Roy</a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/">Résumé</a></li>
+        <li><a href="/work/">Work</a></li>
+        <li><a href="https://xavierroy.in" target="_blank" rel="noopener">Site ↗</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <footer>
+        <main>
+            {% block content %}{% endblock content  %}
+
+        </main>
+
+  <footer class="site-footer">
     <p>
-      Curious to know how I think? Visit  
-      <a href="https://xavierroy.in" target="_blank" rel="noopener">xavierroy.in</a>.
+      Curious how I think? Visit  
+      <a href="https://xavierroy.in" target="_blank" rel="noopener" aria-label="Visit my personal site at xavierroy.in">xavierroy.in</a>.
+    </p>
+    <p>
+      Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener">Eleventy</a>.
     </p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById("nav-toggle");
+    const navList = document.getElementById("nav-list");
+    toggle.addEventListener("click", () => {
+      navList.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>

@@ -1,82 +1,48 @@
 ---
+title: "Xavier Roy · Résumé"
 layout: layout.njk
-title: Xavier Roy — Résumé
 ---
 
-<header>
-  <h1>
-    Xavier Roy  
-    <span>I help people understand software better.</span>
-  </h1>
-  <address>
-    <a href="https://www.linkedin.com/in/xavierroy/">in/xavierroy</a>  
-    <a href="https://github.com/xavierroy">github/xavierroy</a>  
-    <a href="mailto:xavier@xavierroy.com">xavier@xavierroy.com</a>
-  </address>
-</header>
+<p>Work entries found: {{ collections.work | length }}</p>
 
----
+<section class="intro">
+  <h1>Hi, I’m Xavier Roy.</h1>
+  <p>I help people understand software better — through clear documentation, thoughtful systems, and collaborative strategy.</p>
+</section>
 
-## Summary
+<section class="open-to">
+  <h2>Open to Opportunities</h2>
+  <p>I'm exploring leadership roles in technical writing, documentation strategy, and developer experience. Let’s build teams and systems that scale content with care.</p>
+</section>
 
-Accomplished information experience leader with two decades of expertise in documentation, developer tooling, and systems thinking. I specialize in making complex ideas accessible — through clear writing, thoughtful systems, and collaborative strategy.
+<section class="work-listing">
+  <h2>Experience</h2>
 
----
-## Open to Opportunities
+  {% for item in collections.work | reverse %}
+    <article class="work-summary">
+      <header>
+        <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+        <p class="meta">
+          <strong>{{ item.data.company }}</strong> — {{ item.data.location }}<br />
+          <span>{{ item.data.period }}</span>
+        </p>
+      </header>
 
-{% for role in collections.work %}
-  {% if role.data.period == "Coming Soon" %}
-  <article class="future-role">
-    <h3>{{ role.data.title }} at {{ role.data.company }}</h3>
-    <p><em>{{ role.data.location }}</em></p>
-
-    <ul>
-      {% for item in role.data.highlights %}
-        <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
-
-    <p><a href="{{ role.url }}">What I want to build →</a></p>
-  </article>
-  {% endif %}
-{% endfor %}
-
----
-
-## Experience
-{% for role in collections.work %}
-  {% if role.data.period != "Coming Soon" %}
-    <article class="work-entry">
-      <h3>{{ role.data.title }} at {{ role.data.company }}</h3>
-      <p class="meta">{{ role.data.period }} — {{ role.data.location }}</p>
-
-      {% if role.data.highlights %}
-        <ul>
-          {% for item in role.data.highlights | slice(0, 3) %}
-            <li>{{ item }}</li>
+      {% if item.data.highlights %}
+        <ul class="highlights">
+          {% for point in item.data.highlights | slice(0, 3) %}
+            <li>{{ point }}</li>
           {% endfor %}
         </ul>
-      {% else %}
-        <p>{{ role.data.highlight }}</p>
       {% endif %}
 
-      <p><a href="{{ role.url }}">Read more →</a></p>
+      <p><a href="{{ item.url }}">Read more →</a></p>
     </article>
-  {% endif %}
-{% endfor %}
----
+  {% endfor %}
+</section>
 
-## Education
-
-- **Certified Usability Analyst (CUA)** — Human Factors International  
-- **M.S. in Information Technology & Management** — Madurai Kamaraj University  
-- **B.Sc. in Computer Science** — Bharathiar University
-
----
-
-## Contact
-
-- 🌐 [xavierroy.cv](https://xavierroy.cv)  
-- 📧 [xavier@xavierroy.com](mailto:xavier@xavierroy.com)  
-- 💼 [LinkedIn](https://www.linkedin.com/in/xavierroy)  
-- 💻 [GitHub](https://github.com/xavierroy)
+<hr />
+<section class="debug">
+  <h2>Debug: Work Entries</h2>
+  <p>Total found: {{ collections.work | length }}</p>
+</section>
