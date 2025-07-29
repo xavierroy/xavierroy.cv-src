@@ -1,0 +1,18 @@
+# Build output
+_site/
+
+# Dependency directory
+node_modules/
+
+# Optional: Local environment and logs
+*.log
+npm-debug.log*
+
+# macOS system files
+.DS_Store
+
+# VS Code settings (optional)
+.vscode/
+
+# Netlify folder (if you use CLI or previews)
+.netlify/

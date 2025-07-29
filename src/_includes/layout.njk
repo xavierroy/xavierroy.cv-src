@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ title }}</title>
+
+  <!-- Favicon and Social -->
+  <link rel="icon" href="/assets/xr-logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/xr-logo.svg">
+  <meta property="og:image" content="/assets/xr-resume-og.png">
+  <meta property="og:type" content="profile">
+  <meta name="twitter:image" content="/assets/xr-resume-og.png">
+
+  <!-- Fonts + Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Teko:wght@500&family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <p>
+      Curious to know how I think? Visit  
+      <a href="https://xavierroy.in" target="_blank" rel="noopener">xavierroy.in</a>.
+    </p>
+  </footer>
+</body>
+</html>

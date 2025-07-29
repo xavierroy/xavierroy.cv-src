@@ -1,0 +1,22 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<h1>🧪 TEST LAYOUT ACTIVE</h1>
+<article class="work-detail">
+  <header class="work-header">
+    <h1 class="work-title">{{ title }}</h1>
+    <div class="work-meta">
+      <span><strong>Company:</strong> {{ company }}</span>
+      <span><strong>Role:</strong> {{ title }}</span>
+      <span><strong>Period:</strong> {{ period }}</span>
+      <span><strong>Location:</strong> {{ location }}</span>
+    </div>
+  </header>
+
+  <section class="work-body">
+    {{ content | safe }}
+  </section>
+
+  <p><a href="/">← Back to résumé</a></p>
+</article>
+{% endblock %}

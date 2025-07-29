@@ -1,0 +1,26 @@
+{
+  "name": "xavierroy.cv-src",
+  "version": "1.0.0",
+  "description": "Source for xavierroy.cv",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "build": "npx eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xavierroy/xavierroy.cv-src.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/xavierroy/xavierroy.cv-src/issues"
+  },
+  "homepage": "https://github.com/xavierroy/xavierroy.cv-src#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
